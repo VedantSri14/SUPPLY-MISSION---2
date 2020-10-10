@@ -24,14 +24,20 @@ function setup() {
 	helicopterSprite.addImage(helicopterIMG)
 	helicopterSprite.scale = 0.6
 
-	block1 = createSprite(290, 610, 20, 100, { isStatic: true, restitution: 0.3 });
+	//block1 = createSprite(290, 610, 20, 100);
+	block1 = Bodies.rectangle(290, 610, 20, 100, { isStatic: true, restitution: 0.3 });
 	block1.shapeColor = "red";
+	World.add(World, block1)
 
-	block2 = createSprite(400, 650, 200, 20, { isStatic: true, restitution: 0.3 });
+	//block2 = createSprite(400, 650, 200, 20);
+	block2 = Bodies.rectangle(400, 650, 200, 20, { isStatic: true, restitution: 0.3 });
 	block2.shapeColor = "red";
+	World.add(World, block2)
 
-	block3 = createSprite(500, 610, 20, 100, { isStatic: true, restitution: 0.3 });
+	//block3 = createSprite(500, 610, 20, 100);
+	block3 = Bodies.rectangle(500, 610, 20, 100, { isStatic: true, restitution: 0.3 });
 	block3.shapeColor = "red";
+	World.add(World, block3)
 
 	groundSprite = createSprite(width / 2, height - 35, width, 10);
 	groundSprite.shapeColor = color(255)
@@ -40,10 +46,19 @@ function setup() {
 	world = engine.world;
 
 	packageBody = Bodies.circle(width / 2, 200, 5, { restitution: 0.3, isStatic: true });
-	World.add(world, packageBody);
+	World.add(World, packageBody);
+
+	//block1 = Bodies.rectangle;
+	//World.add(world, block1);
+
+	//block2 = Bodies.rectangle;
+	///World.add(world, block2);
+
+	//block3 = Bodies.rectangle;
+	//World.add(world, block3);
 
 	ground = Bodies.rectangle(width / 2, 650, width, 10, { isStatic: true });
-	World.add(world, ground);
+	World.add(World, ground);
 
 	Engine.run(engine);
 
